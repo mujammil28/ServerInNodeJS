@@ -1,0 +1,16 @@
+
+.container{
+    margin: 24px;
+}
+
+img{
+    width: 80px;
+}
+
+
+td{
+    text-align: center;
+}
+tr>th{
+    text-align: center;
+}
