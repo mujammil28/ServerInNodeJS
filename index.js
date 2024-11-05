@@ -6,4 +6,5 @@ server.get('/', (req,res)=>{
     return res.send('Welcome to Inventory App');
 });
 
+
 server.listen(3400);
