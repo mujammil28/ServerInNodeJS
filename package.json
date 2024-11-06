@@ -1,14 +1,29 @@
 {
   "name": "inventory_app",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is server creating app",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "mujammil",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
-  }
+    "express": "^4.21.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mujammil28/ServerInNodeJS.git"
+  },
+  "keywords": [
+    "nodeJs",
+    "html",
+    "css",
+    "expressJs"
+  ],
+  "bugs": {
+    "url": "https://github.com/mujammil28/ServerInNodeJS/issues"
+  },
+  "homepage": "https://github.com/mujammil28/ServerInNodeJS#readme"
 }
