@@ -15,4 +15,17 @@ export default class productController{
                 //     return res.sendFile(path.join(path.resolve(),'src','views','products.html'));
 
             }
+
+            addProduct(req,res){
+
+                    return res.render('new-product');
+            }
+
+            addNewProd(req,res){
+                console.log(req.body)
+                let product=productModel.get();
+
+                res.render('products', {product:product})
+
+            }
 }
