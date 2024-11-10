@@ -17,6 +17,24 @@ export default class productModel{
                 return products;
                     
             }
+
+            static add(productDataObj){
+               
+                    let productAdd=new productModel(
+
+                            products.length+1,
+                            productDataObj.name,
+                            productDataObj.desc,
+                            productDataObj.price,
+                            productDataObj.image,
+
+                            console.log(productDataObj.image)
+
+                    );
+
+                    products.push(productAdd);
+
+            }
 }
 
 

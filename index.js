@@ -9,6 +9,8 @@ server.use(ejsLayouts)
 server.set("view engine",'ejs');
 server.set("views",path.join(path.resolve(),'src','views'))
 
+server.use(express.urlencoded({extended:true}));
+
 const productControllers=new productController()
 
 server.get('/', productControllers.getProduct);
