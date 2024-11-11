@@ -18,14 +18,36 @@ export default class productController{
 
             addProduct(req,res){
 
-                    return res.render('new-product');
+                    return res.render('new-product',{errorMessage:null});
             }
 
             addNewProd(req,res){
                 console.log(req.body)
+                const {name,desc,price,img}=req.body
+                let errors=[];
+                if(!name||name.trim()==''){
+
+                    errors.push('Name is not Defined')
+                }
+                if(!price||parseFloat(price)>1){
+
+                    errors.push('Price is not positive number')
+                }
+
+                try{
+                    const url=new URL(img);
+                }
+                catch(err){
+                    errors.push('url is not correct');
+                }
+                
+                if(errors.length>0){
+                    res.render('new-product',{errorMessage:errors[0]})
+                }
+
                 productModel.add(req.body)
                 let product=productModel.get();
-
+                
                 return res.render('products', {product})
 
             }
