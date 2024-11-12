@@ -28,8 +28,6 @@ export default class productModel{
                             productDataObj.price,
                             productDataObj.image,
 
-                            console.log(productDataObj.image)
-
                     );
 
                     products.push(productAdd);
