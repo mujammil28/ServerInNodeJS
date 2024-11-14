@@ -18,6 +18,14 @@ export default class productModel{
                     
             }
 
+            static update(productObj) {
+                const index = products.findIndex(
+                  (p) => p.id == productObj.id
+                );
+                products[index] = productObj;
+              }
+
+
             static add(productDataObj){
                
                     let productAdd=new productModel(

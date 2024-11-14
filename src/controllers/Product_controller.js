@@ -21,7 +21,7 @@ export default class productController {
 
     getUpdateProductView(req, res, next) {
         // 1. if product exists then return view
-        const { id } = req.body;
+        const  id  = req.params.id;
         const productFound = productModel.getById(id);
         if (productFound) {
           res.render('update-product', {
@@ -36,7 +36,7 @@ export default class productController {
       }
       postUpdateProduct(req, res) {
         productModel.update(req.body);
-        var products = productModel.getAll();
-        res.render('index', { products });
+        var product = productModel.get();
+        res.render('products', { product });
       }
 }
