@@ -44,6 +44,15 @@ export default class productModel{
             static getById(id) {
                 return products.find((p) => p.id == id);
               }
+
+              static delete(productObj) {
+                const index = products.findIndex(
+                  (p) => p.id == productObj.id
+                );
+                products.splice(index,1);
+             
+            }
+
 }
 
 

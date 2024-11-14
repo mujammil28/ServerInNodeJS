@@ -19,11 +19,13 @@ const productControllers=new productController()
 server.get('/', productControllers.getProduct);
 
 server.get('/new', productControllers.addProduct);
-server.get('/update-product/:id',productControllers.getUpdateProductView);
 
 server.post('/',validate,productControllers.addNewProd)
 
+server.get('/update-product/:id',productControllers.getUpdateProductView);
 server.post('/update-product',productControllers.postUpdateProduct);
+
+server.get('/delete-product/:id',productControllers.deleteProduct);
 
 
 server.use(express.static('src/views'));
