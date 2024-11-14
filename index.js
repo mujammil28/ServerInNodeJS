@@ -19,8 +19,12 @@ const productControllers=new productController()
 server.get('/', productControllers.getProduct);
 
 server.get('/new', productControllers.addProduct);
+server.get('/update-product/:id',productControllers.getUpdateProductView);
 
 server.post('/',validate,productControllers.addNewProd)
+
+server.post('/update-product',productControllers.postUpdateProduct);
+
 
 server.use(express.static('src/views'));
 server.listen(3400,()=>{

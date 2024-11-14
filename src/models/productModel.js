@@ -33,6 +33,9 @@ export default class productModel{
                     products.push(productAdd);
 
             }
+            static getById(id) {
+                return products.find((p) => p.id == id);
+              }
 }
 
 
