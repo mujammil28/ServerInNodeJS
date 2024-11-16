@@ -14,6 +14,14 @@ if (!price || parseFloat(price) < 1) {
     errors.push('Price is not a positive number');
 }
 
+            try{
+                  const check=new File( req.file )
+            }
+        catch(err){
+            errors.push('File is required!')
+            
+            }
+
 
 // Check if there are any errors
 
@@ -26,6 +34,7 @@ if (!price || parseFloat(price) < 1) {
     //     errors.push('not valid url');
 
     // }
+
     if (errors.length > 0) {
         // Render new product form with the first error message
         return res.render('new-product', { errorMessage: errors[0] });
