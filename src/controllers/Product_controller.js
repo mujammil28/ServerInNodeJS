@@ -13,10 +13,13 @@ export default class productController {
     }
 
     addNewProd(req, res) {
-       
-        productModel.add(req.body);
+      
+        const {name,desc,price}=req.body;
+        const image="images/"+req.file.filename;
+        productModel.add(name,desc,price,image);
         let product = productModel.get();
-        return res.render('products', { product });
+        res.render('products', { product });
+      
     }
 
     getUpdateProductView(req, res, next) {
