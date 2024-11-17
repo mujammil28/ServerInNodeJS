@@ -4,6 +4,8 @@ import path from 'path';
 import ejsLayouts from 'express-ejs-layouts';
 import validate from './src/middlewares/validationMiddleware.js';
 import { uploadFile } from './src/middlewares/multerMiddleware.js';
+import userController from './src/controllers/userControlle.js';
+
 
 const server = express();
 
@@ -26,6 +28,10 @@ server.get('/update-product/:id',productControllers.getUpdateProductView);
 server.post('/update-product',productControllers.postUpdateProduct);
 
 server.get('/delete-product/:id',productControllers.deleteProduct);
+
+const userControl=new userController();
+
+server.get('/register',userControl.getRegister)
 
 
 server.use(express.static('src/views'));

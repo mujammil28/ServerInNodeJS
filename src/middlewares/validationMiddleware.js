@@ -23,17 +23,6 @@ if (!price || parseFloat(price) < 1) {
             }
 
 
-// Check if there are any errors
-
-
-    // try{
-    //     const valid=new URL(image)
-    //     console.log(image)
-    // } catch(err){
-
-    //     errors.push('not valid url');
-
-    // }
 
     if (errors.length > 0) {
         // Render new product form with the first error message
