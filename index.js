@@ -32,7 +32,9 @@ server.get('/delete-product/:id',productControllers.deleteProduct);
 const userControl=new userController();
 
 server.get('/register',userControl.getRegister)
-
+server.get('/login', userControl.getLogin);
+server.post('/login', userControl.postLogin);
+server.post('/register',userControl.postRegister);
 
 server.use(express.static('src/views'));
 

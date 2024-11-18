@@ -9,4 +9,23 @@ export default class userModel{
 
                 }
 
+  static add(name, email, password) {
+    const newUser = new userModel(
+      users.length + 1,
+      name,
+      email,
+      password
+    );
+    users.push(newUser);
+  }
+
+  static isValidUser(email, password) {
+    const result = users.find(
+      (u) =>
+        u.email == email && u.password == password
+    );
+    return result;
+  }
+
 }
+var users=[];
