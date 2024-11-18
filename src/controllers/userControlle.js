@@ -29,6 +29,16 @@ import productModel from "../models/productModel.js";
                         }
                          req.session.userEmail=email;
                         var product = productModel.get();
-                        res.render('products', { product });
+                        res.render('products', { product,userEmail:req.session.userEmail });
+                      }
+
+                      logout(req,res){
+
+                        req.session.destroy((err)=>{
+                         if(err){       console.log("Error")
+                        }else{
+                            res.redirect('/login')
+                        }
+                    })
                       }
     }

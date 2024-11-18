@@ -14,14 +14,7 @@ if (!price || parseFloat(price) < 1) {
     errors.push('Price is not a positive number');
 }
 
-            try{
-                  const check=new File( req.file )
-            }
-        catch(err){
-            errors.push('File is required!')
-            
-            }
-
+           
 
 
     if (errors.length > 0) {

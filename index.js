@@ -42,7 +42,7 @@ server.get('/register',userControl.getRegister)
 server.get('/login', userControl.getLogin);
 server.post('/login', userControl.postLogin);
 server.post('/register',userControl.postRegister);
-
+server.get('/logout',userControl.logout);
 
 
 

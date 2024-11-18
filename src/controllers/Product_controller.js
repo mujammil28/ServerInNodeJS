@@ -5,11 +5,11 @@ export default class productController {
         
         let product = productModel.get();
        
-        res.render('products', { product: product });
+        res.render('products', { product: product,userEmail:req.session.userEmail });
     }
 
     addProduct(req, res) {
-        return res.render('new-product', { errorMessage: null });
+        return res.render('new-product', { errorMessage: null,userEmail:req.session.userEmail });
     }
 
     addNewProd(req, res) {
@@ -18,7 +18,7 @@ export default class productController {
         const image="images/"+req.file.filename;
         productModel.add(name,desc,price,image);
         let product = productModel.get();
-        res.render('products', { product });
+        res.render('products', { product,userEmail:req.session.userEmail });
       
     }
 
@@ -29,7 +29,7 @@ export default class productController {
         if (productFound) {
           res.render('update-product', {
             product: productFound,
-            errorMessage: null,
+            errorMessage: null,userEmail:req.session.userEmail
           });
         }
         // 2. else return errors.
