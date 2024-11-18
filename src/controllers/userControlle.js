@@ -27,7 +27,7 @@ import productModel from "../models/productModel.js";
                             errorMessage: 'Invalid Credentials',
                           });
                         }
-                        
+                         req.session.userEmail=email;
                         var product = productModel.get();
                         res.render('products', { product });
                       }

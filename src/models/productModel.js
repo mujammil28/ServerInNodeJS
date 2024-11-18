@@ -35,7 +35,7 @@ export default class productModel{
                           desc,
                           price,
                           image,
-
+                        
                     );
 
                     products.push(productAdd);
